@@ -1,5 +1,5 @@
 //your variable declarations here
-Spaceship 
+Spaceship bob = new Spaceship();
 public void setup() 
 {
   size(500, 500);
@@ -7,5 +7,29 @@ public void setup()
 }
 public void draw() 
 {
-  //your code here
+  bob.show();
+  bob.move();
+}
+public void keyPressed()
+{
+  if (key == ENTER)
+  {
+    bob.setDirectionX(0);
+    bob.setDirectionY(0);
+    bob.setX((int)(Math.random()*450)+25);
+    bob.setY((int)(Math.random()*450)+25);
+    bob.setPointDirection((int)(Math.random()*360));
+    background(0);
+  }
+  if (keyCode == LEFT)
+  {
+    bob.turn(-10);
+    background(0);
+  }
+  if (keyCode == RIGHT)
+  {
+    bob.turn(10);
+    background(0);
+  }
+  
 }
