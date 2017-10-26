@@ -7,6 +7,7 @@ public void setup()
 }
 public void draw() 
 {
+  background(0);
   bob.show();
   bob.move();
 }
@@ -21,15 +22,16 @@ public void keyPressed()
     bob.setPointDirection((int)(Math.random()*360));
     background(0);
   }
-  if (keyCode == LEFT)
-  {
-    bob.turn(-10);
-    background(0);
-  }
   if (keyCode == RIGHT)
   {
-    bob.turn(10);
-    background(0);
+    bob.turn(-10);
   }
-  
+  if (keyCode == LEFT)
+  {
+    bob.turn(10);
+  }
+  if (key == ' ')
+  {
+    bob.accelerate(0.75);
+  }  
 }
