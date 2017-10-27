@@ -15,23 +15,23 @@ public void keyPressed()
 {
   if (key == ENTER)
   {
+    bob.setPointDirection((int)(Math.random()*360));
+    bob.setX((int)(Math.random()*450));
+    bob.setY((int)(Math.random()*450));
     bob.setDirectionX(0);
     bob.setDirectionY(0);
-    bob.setX((int)(Math.random()*450)+25);
-    bob.setY((int)(Math.random()*450)+25);
-    bob.setPointDirection((int)(Math.random()*360));
     background(0);
   }
-  if (keyCode == RIGHT)
+  if (keyCode == LEFT)
   {
     bob.turn(-10);
   }
-  if (keyCode == LEFT)
+  if (keyCode == RIGHT)
   {
     bob.turn(10);
   }
   if (key == ' ')
   {
-    bob.accelerate(0.75);
-  }  
+    bob.accelerate(1);
+  }
 }
