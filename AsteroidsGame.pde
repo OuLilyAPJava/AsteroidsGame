@@ -1,19 +1,22 @@
 //your variable declarations here
-Stars[] galaxy = new Stars[100];
+Stars[] galaxy = new Stars[200];
 Spaceship bob = new Spaceship();
 public void setup() 
 {
-  size(500, 500);
+  size(800, 600);
   background(0);
   for (int i = 0; i < galaxy.length; i ++)
   {
     galaxy[i] = new Stars();
-    galaxy[i].show();
   }
 }
 public void draw() 
 {
   background(0);
+  for (int i = 0; i < galaxy.length; i ++)
+  {
+    galaxy[i].show();
+  }
   bob.show();
   bob.move();
 }
@@ -22,8 +25,8 @@ public void keyPressed()
   if (key == ENTER)
   {
     bob.setPointDirection((int)(Math.random()*360));
-    bob.setX((int)(Math.random()*450));
-    bob.setY((int)(Math.random()*450));
+    bob.setX((int)(Math.random()*750));
+    bob.setY((int)(Math.random()*550));
     bob.setDirectionX(0);
     bob.setDirectionY(0);
     background(0);
@@ -36,8 +39,8 @@ public void keyPressed()
   {
     bob.turn(10);
   }
-  if (key == ' ')
+  if (keyCode == UP)
   {
-    bob.accelerate(1);
+    bob.accelerate(0.5);
   }
 }
