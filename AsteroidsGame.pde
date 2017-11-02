@@ -1,7 +1,7 @@
 //your variable declarations here
 Stars[] galaxy = new Stars[300];
 Spaceship bob = new Spaceship();
-Asteroids bobb = new Asteroids();
+Asteroids bobby = new Asteroids();
 public void setup() 
 {
   size(1000, 800);
@@ -20,7 +20,8 @@ public void draw()
   }
   bob.show();
   bob.move();
-  bobb.move();
+  bobby.show();
+  bobby.move();
 }
 public void keyPressed()
 {
