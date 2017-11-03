@@ -5,9 +5,9 @@ class Asteroids extends Floater
   public Asteroids()
   {
     rSpeed = (int)(Math.random()-0.5);
-    corners = 7;
-    int[] xS = {-11, 7, 13, 6, -3, -1, -11};
-    int[] yS = {-8, -9, 0, 10, 11, 0, -8};
+    corners = 12;
+    int[] xS = {-20, -18, -12, 0, 12, 14, 16, 16, 10, 0, -10, -16};
+    int[] yS = {0, -10, -16, -20, -14, -10, -6, 6, 18, 20, 18, 8};
     xCorners = xS;
     yCorners = yS;
     myColor = 255;
@@ -17,7 +17,12 @@ class Asteroids extends Floater
     myDirectionY = 0;
     myPointDirection = 0;
   }
-
+  public void setrSpeed(int x) {
+    rSpeed = x;
+  }  
+  public int getrSpeed() {
+    return (int) rSpeed;
+  }  
   public void setX(int x) {
     myCenterX = x;
   }  
