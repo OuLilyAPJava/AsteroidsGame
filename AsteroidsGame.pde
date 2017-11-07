@@ -1,7 +1,7 @@
 //your variable declarations here
 Stars[] galaxy = new Stars[300];
 Spaceship bob = new Spaceship();
-Asteroids[] bobby = new Asteroids[25];
+Asteroids[] bobby = new Asteroids[20];
 public void setup() 
 {
   size(1000, 800);

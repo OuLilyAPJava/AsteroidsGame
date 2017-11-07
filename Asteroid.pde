@@ -10,7 +10,7 @@ class Asteroids extends Floater
     int[] yS = {0, -10, -16, -20, -14, -10, -6, 6, 18, 20, 18, 8};
     xCorners = xS;
     yCorners = yS;
-    myColor = 255;
+    myColor = 219;
     myCenterX = (int)(Math.random()*900)+50;
     myCenterY = (int)(Math.random()*700)+50;
     myDirectionX = 0;
