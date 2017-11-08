@@ -1,13 +1,13 @@
 class Asteroids extends Floater
 {
-  private int rSpeed;
+  private double rSpeed;
   //add corners
   public Asteroids()
   {
-    rSpeed = (int)(Math.random()-0.5);
+    rSpeed = Math.random()-0.5;
     corners = 12;
-    int[] xS = {-20, -18, -12, 0, 12, 14, 16, 16, 10, 0, -10, -16};
-    int[] yS = {0, -10, -16, -20, -14, -10, -6, 6, 18, 20, 18, 8};
+    int[] xS = {-30, -27, -18, 0, 18, 21, 24, 24, 15, 0, -15, -27};
+    int[] yS = {0, -15, -24, -30, -21, -15, -9, 9, 27, 30, 27, 12};
     xCorners = xS;
     yCorners = yS;
     myColor = 219;
@@ -55,7 +55,7 @@ class Asteroids extends Floater
   } 
   public void move ()   //move the floater in the current direction of travel
   {
-    turn(rSpeed);
+    turn((int)rSpeed);
     super.move();
   }
 }
