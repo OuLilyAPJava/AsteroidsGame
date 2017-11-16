@@ -4,7 +4,7 @@ class Asteroids extends Floater
   //add corners
   public Asteroids()
   {
-    rSpeed = (int)(Math.random()*5)-5;
+    rSpeed = (int)(Math.random()*4)-2;
     corners = 12;
     int[] xS = {-30, -27, -18, 0, 18, 21, 24, 24, 15, 0, -15, -27};
     int[] yS = {0, -15, -24, -30, -21, -15, -9, 9, 27, 30, 27, 12};
