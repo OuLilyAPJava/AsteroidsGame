@@ -14,7 +14,6 @@ public void setup()
   {
     Asteroids aRock = new Asteroids();
     rocks.add(aRock);
-    //rocks[i] = new Asteroids();
   }
 }
 public void draw() 
@@ -28,7 +27,11 @@ public void draw()
   {
     rocks.get(i).show();
     rocks.get(i).move();
-  }
+    if(dist(rocks.get(i).getX(), rocks.get(i).getY(), bob.getX(), bob.getY()) < 45)
+    {
+      rocks.remove(i);
+    }
+  } 
   bob.show();
   bob.move(); 
 }
