@@ -53,7 +53,7 @@ class Asteroids extends Floater
   public double getPointDirection() {
     return myPointDirection;
   } 
-  public void move ()   //move the floater in the current direction of travel
+  public void move()   //move the floater in the current direction of travel
   {
     turn((int)rSpeed);
     super.move();

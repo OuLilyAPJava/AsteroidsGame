@@ -2,27 +2,36 @@
 Stars[] galaxy = new Stars[300];
 Spaceship bob = new Spaceship();
 ArrayList <Asteroids> rocks = new ArrayList <Asteroids>();
+ArrayList <Bullets> ammo = new ArrayList <Bullets>();
 public void setup() 
 {
   size(1000, 800);
   background(0);
+  //stars
   for (int i = 0; i < galaxy.length; i ++)
   {
     galaxy[i] = new Stars();
   }
-  for (int i = 0; i < 15; i ++)
+  //asteroids
+  for (int i = 0; i < 20; i ++)
   {
-    Asteroids aRock = new Asteroids();
-    rocks.add(aRock);
-  }
+    rocks.add(new Asteroids());
+  }  
+  //bullets
+  for (int i = 0; i < ammo.size(); i ++)
+  {
+    ammo.add(new Bullets(bob));
+  } 
 }
 public void draw() 
 {
   background(0);
+  //stars
   for (int i = 0; i < galaxy.length; i ++)
   {
     galaxy[i].show();
   }
+  //asteroids
   for (int i = 0; i < rocks.size(); i ++)
   {
     rocks.get(i).show();
@@ -30,13 +39,28 @@ public void draw()
     if(dist(rocks.get(i).getX(), rocks.get(i).getY(), bob.getX(), bob.getY()) < 45)
     {
       rocks.remove(i);
+      rocks.add(new Asteroids());
     }
-  } 
+  }
+  //bullets
+  for (int i = 0; i < ammo.size(); i ++)
+  {
+    ammo.get(i).show();
+    ammo.get(i).move();
+    //bullet offscreen
+    if (ammo.get(i).getX() > 1000 || ammo.get(i).getX() < 0 || ammo.get(i).getY() > 800 || ammo.get(i).getY() < 0)
+    {
+      ammo.remove(i);
+    }
+  }
+  //spaceship
   bob.show();
   bob.move(); 
 }
 public void keyPressed()
 {
+  //controls
+  //hyperspace
   if (key == ENTER)
   {
     bob.setPointDirection((int)(Math.random()*360));
@@ -46,16 +70,24 @@ public void keyPressed()
     bob.setDirectionY(0);
     background(0);
   }
+  //turn left
   if (keyCode == LEFT)
   {
     bob.turn(-10);
   }
+  //turn right
   if (keyCode == RIGHT)
   {
     bob.turn(10);
   }
+  //accelerate
   if (keyCode == UP)
   {
     bob.accelerate(0.5);
+  }
+  //shoot bullet
+  if(key == ' ')
+  {
+    ammo.add(new Bullets(bob));
   }
 }
