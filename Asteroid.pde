@@ -1,13 +1,14 @@
 class Asteroids extends Floater
 {
   private int rSpeed;
+  private int rSize = (int)(Math.random()*4);
   //add corners
   public Asteroids()
   {
     rSpeed = (int)(Math.random()*4)-2;
     corners = 12;
-    int[] xS = {-30, -27, -18, 0, 18, 21, 24, 24, 15, 0, -15, -27};
-    int[] yS = {0, -15, -24, -30, -21, -15, -9, 9, 27, 30, 27, 12};
+    int[] xS = {-15 * rSize, -13 * rSize, -9 * rSize, 0 * rSize, 9 * rSize, 10 * rSize, 12 * rSize, 12 * rSize, 7 * rSize, 0 * rSize, -7 * rSize, -14 * rSize};
+    int[] yS = {0 * rSize, -7 * rSize, -12 * rSize, -15 * rSize, -10 * rSize, -8 * rSize, -5 * rSize, 4 * rSize, 13 * rSize, 15 * rSize, 14 * rSize, 6 * rSize};
     xCorners = xS;
     yCorners = yS;
     myColor = 219;
@@ -16,6 +17,9 @@ class Asteroids extends Floater
     myDirectionX = (int)(Math.random()*2)-1;
     myDirectionY = (int)(Math.random()*2)-1;
     myPointDirection = 0;
+  }
+  public int getrSize() {
+    return (int) rSpeed;
   }
   public void setrSpeed(int x) {
     rSpeed = x;

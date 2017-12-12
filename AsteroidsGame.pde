@@ -21,7 +21,7 @@ public void setup()
   for (int i = 0; i < ammo.size(); i ++)
   {
     ammo.add(new Bullets(bob));
-  } 
+  }
 }
 public void draw() 
 {
@@ -36,7 +36,7 @@ public void draw()
   {
     rocks.get(i).show();
     rocks.get(i).move();
-    if(dist(rocks.get(i).getX(), rocks.get(i).getY(), bob.getX(), bob.getY()) < 45)
+    if (dist(rocks.get(i).getX(), rocks.get(i).getY(), bob.getX(), bob.getY()) < 45)
     {
       rocks.remove(i);
       rocks.add(new Asteroids());
@@ -47,15 +47,22 @@ public void draw()
   {
     ammo.get(i).show();
     ammo.get(i).move();
-    //bullet offscreen
-    if (ammo.get(i).getX() > 1000 || ammo.get(i).getX() < 0 || ammo.get(i).getY() > 800 || ammo.get(i).getY() < 0)
+  }
+  for (int i = 0; i < rocks.size(); i ++)
+  {
+    for (int j = 0; j < ammo.size(); j ++)
     {
-      ammo.remove(i);
+      if (dist(ammo.get(j).getX(), ammo.get(j).getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 30)
+      {
+        rocks.remove(i);
+        ammo.remove(j);
+        rocks.add(new Asteroids());
+      }
     }
   }
   //spaceship
   bob.show();
-  bob.move(); 
+  bob.move();
 }
 public void keyPressed()
 {
@@ -70,12 +77,12 @@ public void keyPressed()
     bob.setDirectionY(0);
     background(0);
   }
-  //turn left
+  //rotate counterclockwise
   if (keyCode == LEFT)
   {
     bob.turn(-10);
   }
-  //turn right
+  //rotate clockwise
   if (keyCode == RIGHT)
   {
     bob.turn(10);
@@ -86,7 +93,7 @@ public void keyPressed()
     bob.accelerate(0.5);
   }
   //shoot bullet
-  if(key == ' ')
+  if (key == ' ')
   {
     ammo.add(new Bullets(bob));
   }

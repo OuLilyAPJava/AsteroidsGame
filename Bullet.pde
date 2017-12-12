@@ -44,4 +44,10 @@ class Bullets extends Floater
     fill(255, 0, 0);
     ellipse((int)myCenterX, (int)myCenterY, 5, 5);
   }
+  public void move ()   //move the floater in the current direction of travel
+  {      
+    //change the x and y coordinates by myDirectionX and myDirectionY       
+    myCenterX += myDirectionX;    
+    myCenterY += myDirectionY;     
+  }
 }
