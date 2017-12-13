@@ -12,8 +12,8 @@ class Asteroids extends Floater
     xCorners = xS;
     yCorners = yS;
     myColor = 219;
-    myCenterX = (int)(Math.random()*900)+50;
-    myCenterY = (int)(Math.random()*700)+50;
+    myCenterX = (int)(Math.random()*800)+50;
+    myCenterY = (int)(Math.random()*600)+50;
     myDirectionX = (int)(Math.random()*2)-1;
     myDirectionY = (int)(Math.random()*2)-1;
     myPointDirection = 0;
@@ -61,5 +61,11 @@ class Asteroids extends Floater
   {
     turn((int)rSpeed);
     super.move();
+  }
+  public void show ()  //Draws the floater at the current position  
+  {
+    stroke(173, 148, 126);
+    fill(196, 169, 145);
+    super.show();
   }
 }

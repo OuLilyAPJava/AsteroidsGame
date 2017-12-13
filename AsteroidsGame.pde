@@ -5,7 +5,7 @@ ArrayList <Asteroids> rocks = new ArrayList <Asteroids>();
 ArrayList <Bullets> ammo = new ArrayList <Bullets>();
 public void setup() 
 {
-  size(1000, 800);
+  size(900, 700);
   background(0);
   //stars
   for (int i = 0; i < galaxy.length; i ++)
@@ -13,7 +13,7 @@ public void setup()
     galaxy[i] = new Stars();
   }
   //asteroids
-  for (int i = 0; i < 30; i ++)
+  for (int i = 0; i < 25; i ++)
   {
     rocks.add(new Asteroids());
   }  
@@ -71,8 +71,8 @@ public void keyPressed()
   if (key == ENTER)
   {
     bob.setPointDirection((int)(Math.random()*360));
-    bob.setX((int)(Math.random()*950));
-    bob.setY((int)(Math.random()*750));
+    bob.setX((int)(Math.random()*850));
+    bob.setY((int)(Math.random()*650));
     bob.setDirectionX(0);
     bob.setDirectionY(0);
     background(0);

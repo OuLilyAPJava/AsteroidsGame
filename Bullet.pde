@@ -41,7 +41,8 @@ class Bullets extends Floater
   } 
   public void show()
   {
-    fill(255, 0, 0);
+    stroke(181, 194, 221);
+    fill(181, 194, 221);
     ellipse((int)myCenterX, (int)myCenterY, 5, 5);
   }
   public void move ()   //move the floater in the current direction of travel

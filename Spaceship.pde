@@ -8,8 +8,8 @@ class Spaceship extends Floater
     xCorners = xS;
     yCorners = yS;
     myColor = 255;
-    myCenterX = 500;
-    myCenterY = 400;
+    myCenterX = 450;
+    myCenterY = 350;
     myDirectionX = 0;
     myDirectionY = 0;
     myPointDirection = 0;
@@ -59,14 +59,14 @@ class Spaceship extends Floater
     //draw the polygon
     if (keyCode == UP)
     {
-      fill(255, 127, 0);
-      stroke(255, 127, 0);
+      fill(181, 194, 221);
+      stroke(181, 194, 221);
       triangle(-5, 5, -20, 4, -5, -5);
       triangle(-5, 5, -25, 0, -5, -5);
       triangle(-5, 5, -20, -4, -5, -5);
     }
-    fill(myColor);   
-    stroke(myColor);    
+    fill(50, 117, 255);   
+    stroke(50, 117, 255);    
     beginShape();
     for (int nI = 0; nI < corners; nI++)
     {
