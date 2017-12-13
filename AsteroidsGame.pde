@@ -13,7 +13,7 @@ public void setup()
     galaxy[i] = new Stars();
   }
   //asteroids
-  for (int i = 0; i < 20; i ++)
+  for (int i = 0; i < 30; i ++)
   {
     rocks.add(new Asteroids());
   }  
@@ -52,7 +52,7 @@ public void draw()
   {
     for (int j = 0; j < ammo.size(); j ++)
     {
-      if (dist(ammo.get(j).getX(), ammo.get(j).getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 30)
+      if (dist(ammo.get(j).getX(), ammo.get(j).getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 15 * rocks.get(i).getrSize())
       {
         rocks.remove(i);
         ammo.remove(j);

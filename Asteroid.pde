@@ -19,7 +19,7 @@ class Asteroids extends Floater
     myPointDirection = 0;
   }
   public int getrSize() {
-    return (int) rSpeed;
+    return (int) rSize;
   }
   public void setrSpeed(int x) {
     rSpeed = x;
